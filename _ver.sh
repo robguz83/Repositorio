@@ -1,14 +1,16 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
-echo $1;
 
-if [ $1 = "todos" ];
-then
-    cp -a $HOME/*.sh $HOME/workspace/;
+
+parametro=$1 
+if [ -z ${parametro} ]; then 
+cp -a $HOME/[a-zA-Z]*.sh $HOME/workspace/;
+echo "Muestra solo los permitidos";
 else
-    #cp -a $HOME/*.sh $HOME/workspace/
-    cp -a $HOME/[a-zA-Z]*.sh $HOME/workspace/;
+cp -a $HOME/*.sh $HOME/workspace/;
+echo "Muestra todo";
 fi
+
 
 exit
 
